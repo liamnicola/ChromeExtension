@@ -1,0 +1,37 @@
+{
+    "name": "Score Viewer",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Testing extensions",
+    "background": {
+      "service_worker": "firebase.js",
+      "type": "module"
+  },
+    "action": {
+      "default_icon": "scoreviewer48.png",
+      "default_popup": "index.html"
+    },
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "scripting",
+        "storage",
+        "notifications"
+      ],
+      "icons": {
+        "16": "scoreviewer16.png",
+        "48": "scoreviewer48.png",
+        "128": "scoreviewer128.png"
+      },
+    "content_scripts": [
+      {
+      "matches": ["<all_urls>"],
+      "run_at": "document_start",
+      "js": ["script.js"]
+    }
+    ],
+    "host_permissions": ["<all_urls>"]
+
+    
+    
+}
